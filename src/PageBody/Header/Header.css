@@ -1,0 +1,10 @@
+.Header{
+	background: #252525 none repeat scroll 0 0;    
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-width: 1000px;
+    z-index: 2;
+    clear: both;
+}

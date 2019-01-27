@@ -1,0 +1,11 @@
+.Logo {
+    background:red;
+	display: block;
+	height: 50px;
+    width: 200px;
+    float: left;			
+}
+.Logo p{
+    margin-left: 15px;    
+    line-height: 50px;
+}

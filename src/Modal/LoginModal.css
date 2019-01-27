@@ -1,0 +1,40 @@
+.ModalOuter {
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.LoginModal {
+	margin: 0 auto;	
+    width: 505px;    
+    box-shadow: 0 0 20px #151515;
+    background: red;
+}
+.LoginModal .LoginModalHead {    
+    background: #252525;
+    height: 65px;
+}
+.LoginModal .LoginModalHead p{
+    line-height: 65px;
+    font-size: 30px;
+    float: left;
+    margin-left: 20px;
+}
+.LoginModal .LoginModalHead span{
+    line-height: 65px;
+    font-size: 30px;
+    float: right;
+    margin-right: 20px;
+}
+.LoginModal .LoginModalContent{
+    background: #333333;
+	text-align:left;
+	padding:30px;
+}
