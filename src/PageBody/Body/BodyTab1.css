@@ -1,5 +1,6 @@
 .SlideShowContainer{
     width: 1000px;
+    height: 500px;
     margin: 0 auto;
     background: yellowgreen;
 }

@@ -8,7 +8,8 @@ class SlideShow extends Component {
     render() {        
         return(
             <div className="SlideShow">
-
+                <button className="ArrowLeft  Button"></button>
+                <button className="ArrowRight Button"></button>
             </div>
         );        
     }
