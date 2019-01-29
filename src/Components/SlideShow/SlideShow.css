@@ -35,9 +35,7 @@
 }
 
 .SlideShow .SlideContainer .Slide img{ 
-    display: block;     
-    max-width:100%;
-    max-height:100%;    
+    display: block;
 }
 
 .SlideShow .SlideContainer .Slide{

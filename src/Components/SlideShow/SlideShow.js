@@ -24,9 +24,7 @@ class SlideShow extends Component {
             this.images[i].width = this.slideCotainer.clientWidth;
             this.images[i].height = this.slideCotainer.clientHeight;
             this.slideValue.push(this.slideCotainer.clientWidth * i);
-        }
-        //const newWidth = (images[0].clientWidth * images.length) + 'px';
-        //this.slide.style.width = newWidth;
+        }        
     }
    
     _nextSlide(){
