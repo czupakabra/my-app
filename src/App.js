@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <Fragment>
         <Header tabSwitch={this.switchTab} />
-        {currentTab}        
+        {currentTab}          
       </Fragment>
     );
   }
