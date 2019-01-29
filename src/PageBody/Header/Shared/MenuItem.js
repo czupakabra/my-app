@@ -19,7 +19,7 @@ class MenuItem extends Component {
 
   render() {
     return (
-        <li key={this.key} className="MenuItem" >
+        <li className="MenuItem" >
             <div onClick={this.onClick}>{this.text}</div>
         </li>
     );

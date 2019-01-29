@@ -30,15 +30,15 @@ class SingIn extends Component {
   }
   closeRegisterModal() {
     this.setState({ registerModalVisibility: false });
-  }
+  }  
 
   render() {
     return (
       <Fragment>
         <div className="SingIn">
           <ul>
-            <MenuItem itemKey="Login" text="Login" onClick={this.openLoginModal} />
-            <MenuItem itemKey="Register" text="Register" onClick={this.openRegisterModal}/>
+            <MenuItem key="Login" text="Login" onClick={this.openLoginModal} />
+            <MenuItem key="Register" text="Register" onClick={this.openRegisterModal}/>
           </ul>
         </div>
         <LoginModal visibility={this.state.loginModalVisibility} closeModal={this.closeLoginModal} />  

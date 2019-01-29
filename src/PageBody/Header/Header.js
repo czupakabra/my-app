@@ -8,13 +8,11 @@ import SingIn from './SingIn/SingIn';
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.menuItems = ["option1", "option2", "option3", "bigos"];
-
-    console.log("propsonclick header: " + typeof props.tabSwitch);
+    this.menuItems = ["option1", "option2", "option3", "bigos"];   
   }
   render() {
     return (
-      <header className="Header">
+      <header key="Header" className="Header">
         <Logo />
         <Menu menuItems={this.menuItems} tabSwitch={this.props.tabSwitch} />
         <SingIn />

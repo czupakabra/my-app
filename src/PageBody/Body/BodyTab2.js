@@ -26,7 +26,7 @@ class BodyTab2 extends Component {
     }
 }
 
-function incrementAction() { console.log("INCREMENT"); return ({ type: "INCREMENT" }); }
+//function incrementAction() { console.log("INCREMENT"); return ({ type: "INCREMENT" }); }
 function decrementAction() { return { type: "DECREMENT" }; }
 
 function mapStateToProps(state) {

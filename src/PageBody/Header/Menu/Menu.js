@@ -20,7 +20,7 @@ class Menu extends Component {
     createMenu() {
         if (Array.isArray(this.menuItems)) {
             for (let i = 0; i < this.menuItems.length; i++)
-                this.menuBody.push(<MenuItem itemKey={"MenutItemIndex"} text={this.menuItems[i]} onClick={function () { this.props.tabSwitch(i+1)}.bind(this) } />);
+                this.menuBody.push(<MenuItem key={"MenutItemIndex-"+i} text={this.menuItems[i]} onClick={function () { this.props.tabSwitch(i+1)}.bind(this) } />);
         }
     }    
 

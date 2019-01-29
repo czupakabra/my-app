@@ -3,38 +3,50 @@
     height: 100%;
     background: blue;
     position: relative;
-    overflow: hidden;     
 }
 .SlideShow  .Button{
     border:none;
     width:50px;
     height: 50px;
     background: purple;
-    position: absolute;    
+    position: absolute;
     top: 50%;
-    transform: translateY(-50%);    
+    transform: translateY(-50%);
 }
 
 .SlideShow  .ArrowLeft{
     left: 0;
     background: url("./Icon/Arrowhead-Left-01-256.png");
-    background-size: 50px 50px;    
+    background-size: 50px 50px;
+    z-index: 1;
 }
 
 .SlideShow  .ArrowRight{
     right: 0;
     background: url("./Icon/Arrowhead-Right-01-256.png");
-    background-size: 50px 50px;     
+    background-size: 50px 50px;
+    z-index: 1;
 }
 .SlideShow  .SlideContainer{
+    position: relative;
     height: 100%;
-    width: 3000px;       
+    width: 100%;
+    overflow: hidden;
 }
 
-.SlideShow .SlideContainer img{
-    display: inline-block;    
+.SlideShow .SlideContainer .Slide img{ 
+    display: block;     
     max-width:100%;
-    max-height:100%;
-    
-    transition: 1s;       
+    max-height:100%;    
+}
+
+.SlideShow .SlideContainer .Slide{
+    position: absolute;
+    display: inline-flex;   
+    height: 100%;
+    min-width: 100%;
+
+    left: 0;
+
+    transition: 1s;         
 }

@@ -16,8 +16,7 @@ class App extends Component {
     this.switchTab = this.switchTab.bind(this);
   }
 
-  switchTab(x){
-    //console.log("oarametr x: " );
+  switchTab(x){    
     this.setState({ currentTabShow: x });    
   }
   render() {
@@ -40,7 +39,7 @@ class App extends Component {
     return (
       <Fragment>
         <Header tabSwitch={this.switchTab} />
-        {currentTab}          
+        {currentTab}           
       </Fragment>
     );
   }
