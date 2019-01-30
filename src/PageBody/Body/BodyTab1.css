@@ -1,13 +1,11 @@
 .SlideShowContainer{
     width: 1500px;
     height: 850px;
-    margin: 0 auto;
-    background: yellowgreen;
+    margin: 0 auto;   
 }
 
 .SlideShowContainer2{
-    width: 1000px;
-    height: 500px;
-    margin: 0 auto;
-    background: yellowgreen;
+    width: 2000px;
+    height: 1000px;
+    margin: 0 auto;    
 }
