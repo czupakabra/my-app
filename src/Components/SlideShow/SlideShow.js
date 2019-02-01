@@ -1,57 +1,67 @@
 import React, { Component } from 'react';
-import ReactDOM from "react-dom";
 import './SlideShow.css';
 
 class SlideShow extends Component {
     constructor(props){
-        super(props);
-
-        this.slide = null;
-        this.images = null;
-        this.slideValue = [];
+        super(props);       
+        
+        this.slideOffsetValue = [];
         this.currentSlide = 0;
+        this.propsChildren = this.props.children;        
+
+        this.slideRef = React.createRef();
+        this.root = React.createRef();        
+
+        this._mapChildImages = this._mapChildImages.bind(this);
 
         this._nextSlide = this._nextSlide.bind(this);
         this._prevSlide = this._prevSlide.bind(this);
+    }  
+
+    _mapChildImages(x, y){
+        console.log(x);      
+        return function(child){ return React.cloneElement(child, { width: x, height: y })};        
     }
-
+    
     componentDidMount(){
-        this.slideCotainer = ReactDOM.findDOMNode(this).querySelector('.SlideContainer');
-        this.slide = ReactDOM.findDOMNode(this).querySelector('.Slide');
-        this.images = ReactDOM.findDOMNode(this).querySelectorAll('img');
+        console.log(this.root.current.clientWidth);      
+        this.propsChildren =  React.Children.map(this.props.children, this._mapChildImages(this.root.current.clientWidth, this.root.current.clientHeight));
 
-        for(let i=0; i < this.images.length; i++){
-            this.images[i].width = this.slideCotainer.clientWidth;
-            this.images[i].height = this.slideCotainer.clientHeight;
-            this.slideValue.push(this.slideCotainer.clientWidth * i);
-        }        
+        for(let i=0; i < this.propsChildren.length; i++){
+            this.slideOffsetValue.push(this.root.current.clientWidth * i);
+        } 
+        this.forceUpdate();    
     }
    
     _nextSlide(){
-        console.log(this.slide.style.left);     
-        if(this.currentSlide < this.images.length-1){
-            this.currentSlide++;            
-            this.slide.style.left = -this.slideValue[this.currentSlide] + 'px';            
-        }
-        console.log(this.slide.style.left);        
+        if(this.currentSlide < this.propsChildren.length-1){
+            this.currentSlide++;
+            this.slideRef.current.style.transform = `translateX(${-this.slideOffsetValue[this.currentSlide]}px)`;
+        }                
     }
     _prevSlide(){
-        console.log(this.slide.style.left);            
         if(this.currentSlide > 0){
-            this.currentSlide--;            
-            this.slide.style.left = -this.slideValue[this.currentSlide] + 'px';
-        }
-        console.log(this.slide.style.left);
+            this.currentSlide--;
+            this.slideRef.current.style.transform = `translateX(${-this.slideOffsetValue[this.currentSlide]}px)`;
+        }        
     }
 
     render() {
         return(
-            <div className="SlideShow">
+            <div className="SlideShow" ref={this.root}>
                 <button className="ArrowLeft  Button" onClick={this._prevSlide}></button>
                 <button className="ArrowRight Button" onClick={this._nextSlide}></button>
+                <div className="DotsOuter">
+                    <div className="DotsContainer">
+                        <img src={require("./Icon/Circle.png")} alt="circle" width="30px" height="30px" />
+                        <img src={require("./Icon/Circle.png")} alt="circle" width="30px" height="30px" />
+                        <img src={require("./Icon/Circle.png")} alt="circle" width="30px" height="30px" />
+                        <img src={require("./Icon/Circle.png")} alt="circle" width="30px" height="30px" />
+                    </div>
+                </div>
                 <div className="SlideContainer">
-                    <div className="Slide">
-                        {this.props.children}
+                    <div className="Slide" ref={this.slideRef}>
+                        {this.propsChildren}
                     </div>
                 </div>
             </div>
