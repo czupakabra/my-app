@@ -1,0 +1,51 @@
+.ItemSelector{
+    margin: 0 auto;
+    width: 1000px;
+    height: 500px;
+    background: red;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.ItemSelector .LeftSideContainer{
+    height: 100%;
+    background: blue;
+    flex: 1;
+}
+.ItemSelector .RightSideContainer{
+    height: 100%;
+    background: blue;
+    flex: 1;
+}
+.ItemSelector .ArrowsContainer{    
+    flex: 1;
+}
+
+.ItemSelector .ArrowsContainer button{
+    border:none;
+    width: 100%;
+    background: purple;
+    padding: 10px;
+    box-sizing: border-box; 
+    margin: 5px 0;
+}
+
+.ItemSelector .Item{
+    width: 100%;
+    height: 50px;
+    background: green;
+    margin-top: 10px;
+}
+
+.ItemSelector .Item:hover{
+    background: gray;
+}
+
+input[type=checkbox]:checked {
+    display: none;
+}
+
+input[type=checkbox]:not(:checked) {
+    display: block;
+}
