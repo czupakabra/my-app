@@ -1,19 +1,6 @@
-.Item{
-    width: 100%;
-    height: 50px;
-    background: green;
-    margin-top: 10px;    
+.ItemRoot input[type=checkbox]{
+    display: none;
 }
-
-.Item:hover{
-    background: gray;
-}
-
-
-
-
-
-
 .ItemV2{  
     display: block;      
     width: 100%;
@@ -21,25 +8,18 @@
     background: green;
     margin-top: 10px;   
 }
+.ItemV2:hover{
+    background: gray;
+}
 .ItemText{
     
     width: 100%;
     height: 100%;
     line-height: 50px;
 }
-
 .CustomCheckBox{
     display: block;
     margin-top: 20px;
     cursor: pointer; 
     float: left;
-}
-
-input[type=checkbox]:checked + .ItemText{
-    background: red;
-}
-
-input[type=checkbox]
-{
-    display: inline-block;
 }

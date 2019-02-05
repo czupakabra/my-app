@@ -6,16 +6,14 @@ class ItemV2 extends Component {
         super(props);  
         this._hendleClick = this._hendleClick.bind(this);
     }
-
-    _hendleClick(){
-        console.log('props checked: ' + this.props.checked);
+    _hendleClick(){        
         this.props.onStatusChange(this.props.index);
     }
     render() {
         return (
-            <div className="ItemV2">                 
-                <label className="ItemV2" > 
-                 <input type="checkbox"  checked={this.props.checked} onChange={this._hendleClick} />
+            <div className="ItemRoot"> 
+                <input id={"Item"+this.props.index} type="checkbox"  checked={this.props.checked} onChange={this._hendleClick} />                
+                <label className="ItemV2" htmlFor={"Item"+this.props.index}>                  
                     <div className=".ItemText">
                         {this.props.text}
                     </div>

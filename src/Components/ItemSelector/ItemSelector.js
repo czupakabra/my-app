@@ -17,8 +17,15 @@ class ItemSelector extends Component {
         this._moveToRight = this._moveToRight.bind(this);
         this._moveToLeft  = this._moveToLeft.bind(this);
         this._changeItemState = this._changeItemState.bind(this);
+        this._returnSelection = this._returnSelection.bind(this);
+
         this._generateAllItemsList();
-    }    
+    }
+    
+    _returnSelection(){
+        const temp = this.allItems.filter(function(el, i, arr){return this.state.checked[i]}.bind(this));
+        this.props.handle(temp);
+    }
 
     _generateAllItemsList(){
         if (Array.isArray(this.allItems)) {
@@ -26,8 +33,7 @@ class ItemSelector extends Component {
                 this.leftCotainerItemms[i] = (<ItemV2 key={"ItemSelectorIndex_"+i} index={i}  text={this.allItems[i]} checked={this.state.checked[i]} onStatusChange={this._changeItemState}/>);                
             }               
         }        
-    }
-    
+    }    
     _changeItemState(index){              
         let temp = this.state.checked;               
         temp[index] = !this.state.checked[index];        
@@ -36,12 +42,11 @@ class ItemSelector extends Component {
     }
 
     _moveToRight(){
-        console.log(this.state.checked);        
+        this._returnSelection();                
     }
     _moveToLeft(){
 
     }
-
     render() {
         return (
             <section id="ItemSelector" className="ItemSelector">

@@ -42,10 +42,18 @@
     background: gray;
 }
 
-input[type=checkbox]:checked {
+.LeftSideContainer input[type=checkbox]:checked + .ItemV2{
     display: none;
 }
-
-input[type=checkbox]:not(:checked) {
+.LeftSideContainer input[type=checkbox]:not(:checked) + .ItemV2{
     display: block;
+}
+
+
+.RightSideContainer input[type=checkbox]:checked + .ItemV2{
+    display: block;
+}
+
+.RightSideContainer input[type=checkbox]:not(:checked) + .ItemV2{
+    display: none;
 }
