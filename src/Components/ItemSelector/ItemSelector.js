@@ -12,55 +12,60 @@ class ItemSelector extends Component {
             checked: this.allItems.map(function(){return false})
         };
 
-        this.leftCotainerItemms = new Array(this.allItems.length);
+        this.itemContainer = new Array(this.allItems.length);
 
-        this._moveToRight = this._moveToRight.bind(this);
-        this._moveToLeft  = this._moveToLeft.bind(this);
+        this._selectAll = this._selectAll.bind(this);
+        this._deselectAll  = this._deselectAll.bind(this);
         this._changeItemState = this._changeItemState.bind(this);
         this._returnSelection = this._returnSelection.bind(this);
 
         this._generateAllItemsList();
-    }
-    
+    }    
     _returnSelection(){
         const temp = this.allItems.filter(function(el, i, arr){return this.state.checked[i]}.bind(this));
-        this.props.handle(temp);
+        if(temp.length > 0)
+            this.props.handle(temp);
+        else
+            this.props.handle(null);
     }
-
     _generateAllItemsList(){
         if (Array.isArray(this.allItems)) {
             for (let i = 0; i < this.allItems.length; i++){
-                this.leftCotainerItemms[i] = (<ItemV2 key={"ItemSelectorIndex_"+i} index={i}  text={this.allItems[i]} checked={this.state.checked[i]} onStatusChange={this._changeItemState}/>);                
-            }               
-        }        
+                this.itemContainer[i] = (<ItemV2 key={"ItemSelectorIndex_"+i} index={i}  text={this.allItems[i]} checked={this.state.checked[i]} onStatusChange={this._changeItemState}/>);
+            }
+        }
+    }
+    _changeItemState(index){
+        let temp = this.state.checked;
+        temp[index] = !this.state.checked[index];
+        this.setState({checked: temp}, function(){this._returnSelection();}.bind(this));               
+    }
+    _selectAll(){        
+        let temp = this.state.checked;
+        temp = temp.map(function(){return true});
+        this.setState({checked: temp}, function(){this._returnSelection();}.bind(this));         
+    }
+    _deselectAll(){
+        let temp = this.state.checked;
+        temp = temp.map(function(){return false});
+        this.setState({checked: temp}, function(){this._returnSelection();}.bind(this));              
     }    
-    _changeItemState(index){              
-        let temp = this.state.checked;               
-        temp[index] = !this.state.checked[index];        
-        this.setState({checked: temp});
-        this.leftCotainerItemms[index] = (<ItemV2 key={"ItemSelectorIndex_"+index} index={index}  text={this.allItems[index]} checked={this.state.checked[index]} onStatusChange={this._changeItemState}/>);
-    }
-
-    _moveToRight(){
-        this._returnSelection();                
-    }
-    _moveToLeft(){
-
-    }
     render() {
+        //this._returnSelection();
+        this._generateAllItemsList();        
         return (
-            <section id="ItemSelector" className="ItemSelector">
+            <div id="ItemSelector" className="ItemSelector">
                 <div className="LeftSideContainer">
-                    {this.leftCotainerItemms}
+                    {this.itemContainer}
                 </div>
                 <div className="ArrowsContainer">
-                    <button onClick={this._moveToRight}><img src={require("./Icon/ArrowRight.png")} alt="ArrowLeft" width="50px" height="50px"/></button>
-                    <button onClick={this._moveToLeft}><img src={require("./Icon/ArrowLeft.png" )} alt="ArrowLeft" width="50px" height="50px"/></button>
+                    <button onClick={this._selectAll}>Select All</button>
+                    <button onClick={this._deselectAll}>Deselect All</button>
                 </div>
                 <div className="RightSideContainer">
-                    {this.leftCotainerItemms}
+                    {this.itemContainer}
                 </div>
-            </section>
+            </div>
         );
     }
 }

@@ -8,7 +8,7 @@ import SingIn from './SingIn/SingIn';
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.menuItems = ["ImageSlider", "option2", "option3", "bigos"];   
+    this.menuItems = ["ImageSlider", "ItemSelector", "ToDoList", "MusicPlayer"];   
   }
   render() {
     return (

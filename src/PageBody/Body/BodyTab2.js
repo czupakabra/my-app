@@ -2,28 +2,29 @@ import React, { Component } from 'react';
 import './BodyTabs.css';
 import './BodyTab2.css';
 
-import ItemSelector from '../../Components/ItemSelector/ItemSelector'
+import ItemSelector from '../../Components/ItemSelector/ItemSelector';
 
 class BodyTab2 extends Component {
     constructor(props){
         super(props);
+        this.state = { audioList: null };
 
-        this.itemsArr = ['option1','option2','option3','option4','option5'];
-        
-        this._selectorHendle = this._selectorHendle.bind(this);
+        this.itemsArr = ['Option 1','Option 2','Option 3', 'Option 4','Option 5','Option 6'];
     }
 
     _selectorHendle(selectedItems){
-        console.log('Selected Items: ');
         console.log(selectedItems);
     }
 
-    render() {        
+    render() {
         return (
             <section id="BodyTab2" className="BodyTab">
-                <ItemSelector itemsSource={this.itemsArr} handle={this._selectorHendle} />
+                               
+                <section className="ItemSelectorCotainer">
+                    <ItemSelector itemsSource={this.itemsArr} handle={this._selectorHendle} />
+                </section>
             </section>
-        );       
+        );
     }
 }
 

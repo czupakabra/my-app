@@ -1,10 +1,10 @@
-.SlideShowContainer{
+#BodyTab1 .SlideShowContainer{
     width: 1500px;
     height: 850px;
     margin: 0 auto;   
 }
 
-.SlideShowContainer2{
+#BodyTab1 .SlideShowContainer2{
     width: 2000px;
     height: 1000px;
     margin: 0 auto;    

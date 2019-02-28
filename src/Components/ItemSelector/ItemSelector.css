@@ -1,7 +1,6 @@
-.ItemSelector{
-    margin: 0 auto;
-    width: 1000px;
-    height: 500px;
+.ItemSelector{    
+    width: 100%;
+    height: 100%;
     background: red;
     display: flex;
     flex-shrink: 0;
@@ -48,12 +47,9 @@
 .LeftSideContainer input[type=checkbox]:not(:checked) + .ItemV2{
     display: block;
 }
-
-
 .RightSideContainer input[type=checkbox]:checked + .ItemV2{
     display: block;
 }
-
 .RightSideContainer input[type=checkbox]:not(:checked) + .ItemV2{
     display: none;
 }

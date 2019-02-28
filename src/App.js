@@ -6,6 +6,7 @@ import Header from './PageBody/Header/Header';
 import BodyTab1 from './PageBody/Body/BodyTab1';
 import BodyTab2 from './PageBody/Body/BodyTab2';
 import BodyTab3 from './PageBody/Body/BodyTab3';
+import BodyTab4 from './PageBody/Body/BodyTab4';
 
 
 class App extends Component {
@@ -31,7 +32,10 @@ class App extends Component {
         break;
       case 3:
         currentTab = <BodyTab3 />;
-        break;        
+        break;
+      case 4:
+        currentTab = <BodyTab4 />;
+        break;       
       default:
         currentTab = <BodyTab1 />;
         break;

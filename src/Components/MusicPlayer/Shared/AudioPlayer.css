@@ -1,0 +1,53 @@
+.AudioPlayer{
+    width: 100%;
+    height: 100%;
+    background: blueviolet;
+}
+.AudioPlayer .buttonsContainer{
+    height: 50px;
+    width: 100%;
+    background: blue;
+}
+.AudioPlayer .buttonsContainer .buttonsContainerCenter{
+    width:300px;
+    margin: 0 auto;
+}
+.AudioPlayer .buttonsContainer button{
+    height: 50px;
+    width: 50px;
+    background: yellow;
+    margin: 0 5px;
+}
+.AudioPlayer .buttonsContainer button img{
+    height: 40px;
+    width: 40px;    
+}
+.AudioPlayer  .rangeSliderCotainer{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: yellowgreen;
+    margin-top: 10px;
+}
+.AudioPlayer  .rangeSliderCotainer .rangeSlider{
+    height: 20px;
+    width: 100%;
+    appearance: none;
+    outline: none;
+}
+.AudioPlayer  .rangeSliderCotainer .rangeSlider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px; 
+    height: 25px; 
+    background: #4CAF50; 
+    cursor: pointer;
+    border-radius: 50%;   
+}
+.AudioPlayer  .rangeSliderCotainer .rangeSlider::-moz-range-thumb{
+    width: 25px; 
+    height: 25px; 
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;   
+}

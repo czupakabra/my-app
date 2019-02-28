@@ -3,7 +3,7 @@ import './Item.css';
 
 class ItemV2 extends Component {
     constructor(props){
-        super(props);  
+        super(props);
         this._hendleClick = this._hendleClick.bind(this);
     }
     _hendleClick(){        
@@ -12,8 +12,8 @@ class ItemV2 extends Component {
     render() {
         return (
             <div className="ItemRoot"> 
-                <input id={"Item"+this.props.index} type="checkbox"  checked={this.props.checked} onChange={this._hendleClick} />                
-                <label className="ItemV2" htmlFor={"Item"+this.props.index}>                  
+                <input id={"Item"+this.props.index} type="checkbox"  checked={this.props.checked} onChange={this._hendleClick} />
+                <label className="ItemV2" htmlFor={"Item"+this.props.index}>
                     <div className=".ItemText">
                         {this.props.text}
                     </div>
