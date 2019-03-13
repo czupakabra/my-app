@@ -1,33 +1,105 @@
 .AudioPlayer{
     width: 100%;
     height: 100%;
-    background: blueviolet;
+    display: flex;
 }
-.AudioPlayer .buttonsContainer{
-    height: 50px;
+.AudioPlayer .PlayPauseButtonContainer{
+    height: 200px;
+    width: 200px;
+    flex: 1;
+}
+.AudioPlayer .PlayPauseButtonContainer button{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    border: none;
+    background-color: Transparent;
+}
+.AudioPlayer .SlideButtonsContainer{
+    height: 200px;
     width: 100%;
-    background: blue;
+    margin-left: 20px;
+    flex: 4;
 }
-.AudioPlayer .buttonsContainer .buttonsContainerCenter{
-    width:300px;
-    margin: 0 auto;
+.AudioPlayer .PlayPauseButtonContainer img{
+    height: 180px;
+    width: 180px;
 }
-.AudioPlayer .buttonsContainer button{
+.AudioPlayer .buttonsTitleContainer{
+    height: 150px;
+    width: 100%;
+    display: flex;
+}
+.AudioPlayer .buttonsTitleContainer .AlbumTitleContainer{
+    flex: 1;
+}
+.AudioPlayer .buttonsTitleContainer .AlbumTitleContainer > div{
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+}
+.AudioPlayer .buttonsTitleContainer .AlbumTitleContainer .ContainerText {
+    flex: 1;
+}
+.AudioPlayer .buttonsTitleContainer .AlbumTitleContainer .ContainerProps{
+    flex: 2;
+}
+.AudioPlayer .buttonsTitleContainer .AlbumTitleContainer .TitleContainer{
+    font-size: 40px;
+    line-height: 50px;
+    overflow: hidden;
+}
+.AudioPlayer .buttonsTitleContainer .buttonsContainer{
+    height: 150px;
+    flex: 1;
+    position: relative;   
+}
+.AudioPlayer .buttonsTitleContainer .buttonsContainer .buttons{
+    text-align: right;
+    margin-right: 20px;
+}
+.AudioPlayer .buttonsTitleContainer .buttonsContainer .buttons button{
     height: 50px;
     width: 50px;
-    background: yellow;
+    border-radius: 50px;
+    border: none;
+    background-color: Transparent;
     margin: 0 5px;
 }
-.AudioPlayer .buttonsContainer button img{
-    height: 40px;
-    width: 40px;    
+.AudioPlayer .buttonsTitleContainer .buttonsContainer .buttons button img{
+    height: 50px;
+    width: 50px;
+}
+.AudioPlayer .buttonsTitleContainer .buttonsContainer .buttons .rangeSliderVolumeCotainer{
+    float: right;
+    height: 50px;
+    width: 100px; 
+    line-height: 50px;
+}
+.AudioPlayer .buttonsTitleContainer .buttonsContainer .buttons .rangeSliderVolumeCotainer .rangeSliderVolume{    
+    height: 20px;
+    width: 100px;
+    appearance: none;
+    outline: none;
+}
+.AudioPlayer .buttonsContainer .TimeCotainer {
+    position: absolute;
+    height: 50px;
+    width: 100px;
+    bottom: 0;
+    right: 20px;
+}
+.AudioPlayer .buttonsContainer .TimeCotainer .CurrentTime{
+    font-size: 20px;
+    line-height: 50px;
+    text-align: right;
 }
 .AudioPlayer  .rangeSliderCotainer{
-    width: 100%;
+    width: calc(100% - 20px);
     height: 50px;
     line-height: 50px;
-    background: yellowgreen;
-    margin-top: 10px;
+    margin-bottom: 0px;
 }
 .AudioPlayer  .rangeSliderCotainer .rangeSlider{
     height: 20px;
@@ -42,12 +114,18 @@
     height: 25px; 
     background: #4CAF50; 
     cursor: pointer;
-    border-radius: 50%;   
+    border-radius: 50%;
 }
 .AudioPlayer  .rangeSliderCotainer .rangeSlider::-moz-range-thumb{
-    width: 25px; 
-    height: 25px; 
+    width: 25px;
+    height: 25px;
     background: #4CAF50;
     cursor: pointer;
-    border-radius: 50%;   
+    border-radius: 50%;
+}
+
+
+
+.AudioPlayer .buttonsTitleContainer .buttonsContainer .buttons .SelectedButton{
+    background: #999999;
 }
