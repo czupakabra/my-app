@@ -19,6 +19,6 @@
 }
 
 .PlayListItem:hover{
-    background: red;
+    background: #222222; 
     border-radius: 5px;
 }

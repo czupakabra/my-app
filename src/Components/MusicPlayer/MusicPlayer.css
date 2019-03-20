@@ -4,8 +4,7 @@
     display: flex;
 }
 .MusicPlayerContainer .LibraryCotainer{
-    flex: 1;
-    background: blue;
+    flex: 1;    
 }
 .MusicPlayerContainer .PlayerCotainer{
     flex: 1;    

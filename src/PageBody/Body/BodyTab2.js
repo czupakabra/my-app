@@ -18,7 +18,7 @@ class BodyTab2 extends Component {
 
     render() {
         return (
-            <section id="BodyTab2" className="BodyTab">
+            <section id="BodyTab2" className="BodyTab BodyTab2">
                                
                 <section className="ItemSelectorCotainer">
                     <ItemSelector itemsSource={this.itemsArr} handle={this._selectorHendle} />
