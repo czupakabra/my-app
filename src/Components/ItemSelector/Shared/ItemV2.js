@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Fragment } from 'react';
+
 import './Item.css';
 
 class ItemV2 extends Component {
@@ -14,8 +16,8 @@ class ItemV2 extends Component {
             <div className="ItemRoot"> 
                 <input id={"Item"+this.props.index} type="checkbox"  checked={this.props.checked} onChange={this._hendleClick} />
                 <label className="ItemV2" htmlFor={"Item"+this.props.index}>
-                    <div className=".ItemText">
-                        {this.props.text}
+                    <div className="ItemText">
+                        <span>{this.props.text}</span>
                     </div>
                 </label>
             </div>

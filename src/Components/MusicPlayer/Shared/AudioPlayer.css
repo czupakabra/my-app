@@ -112,14 +112,14 @@
     appearance: none;
     width: 25px; 
     height: 25px; 
-    background: #4CAF50; 
+    background: #222222; 
     cursor: pointer;
     border-radius: 50%;
 }
 .AudioPlayer  .rangeSliderCotainer .rangeSlider::-moz-range-thumb{
     width: 25px;
     height: 25px;
-    background: #4CAF50;
+    background: #222222; 
     cursor: pointer;
     border-radius: 50%;
 }

@@ -12,16 +12,18 @@
     transform: translateY(-50%);
 }
 .SlideShow  .ArrowLeft{
-    left: 0;
+    left: 10px;
     background: url("./Icon/ArrowLeft.png");
     background-size: 50px 50px;
     z-index: 1;
+    display: none;
 }
 .SlideShow  .ArrowRight{
-    right: 0;
+    right: 10px;
     background: url("./Icon/ArrowRight.png");
     background-size: 50px 50px;
     z-index: 1;
+    display: none;
 }
 .SlideShow .DotsOuter{
     position: absolute;
@@ -29,6 +31,7 @@
     width: 100%;
     bottom: 40px;
     z-index: 1;
+    display: none;
 }
 .SlideShow .DotsOuter .DotsContainer{
     display: inline-block;
@@ -53,4 +56,14 @@
     min-width: 100%;
     left: 0;
     transition: 1s;
+}
+
+.SlideShow:hover .ArrowLeft{
+    display: block;
+}
+.SlideShow:hover .ArrowRight{
+    display: block;
+}
+.SlideShow:hover .DotsOuter{
+    display: block;
 }

@@ -2,20 +2,22 @@
     display: none;
 }
 .ItemV2{  
-    display: block;      
+    display: block;
     width: 100%;
-    height: 50px;
-    background: green;
-    margin-top: 10px;   
+    height: 60px;
+    line-height: 60px;
+    border-bottom: solid #222222; 
 }
 .ItemV2:hover{
     background: gray;
 }
-.ItemText{
-    
+.ItemText{    
     width: 100%;
     height: 100%;
     line-height: 50px;
+}
+.ItemText span{    
+   margin-left: 20px;
 }
 .CustomCheckBox{
     display: block;
