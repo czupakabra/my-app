@@ -6,10 +6,16 @@ import * as serviceWorker from './serviceWorker';
 
 import { Provider } from "react-redux";
 import { createStore } from 'redux';
+import { combineReducers } from 'redux'
 
 import ItemListReducer from './Reducers/ItemListReducer';
+import ItemSelectorReducer from './Reducers/ItemSelectorReducer';
 
-const store = createStore(ItemListReducer);
+const reducer = combineReducers({
+    ItemList: ItemListReducer,
+    ItemSelector: ItemSelectorReducer
+});
+const store = createStore(reducer);
 
 ReactDOM.render(
     <Provider store={store}>

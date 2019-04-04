@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './ItemSelector.css';
 
+import { connect } from 'react-redux';
+
 import ItemV2 from './Shared/ItemV2';
 
 class ItemSelector extends Component {
@@ -8,6 +10,7 @@ class ItemSelector extends Component {
         super(props);
 
         this.allItems = this.props.itemsSource;
+        this.props.checked(this.allItems.map(function () { return false }));
         this.state = {
             checked: this.allItems.map(function () { return false })
         };
@@ -80,4 +83,17 @@ class ItemSelector extends Component {
     }
 }
 
-export default ItemSelector;
+function mapStateToProps(state) {
+    return ({
+       items: state.items
+    });
+}
+function mapDispatchToProps(dispatch) {
+    return ({
+        checkedItem: function(ItemsCheckStatus){            
+            dispatch({type: "CHECK", checked: ItemsCheckStatus})
+        }
+    });
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemSelector);

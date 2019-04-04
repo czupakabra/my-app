@@ -9,6 +9,7 @@ class BodyTab3 extends Component {
         return (
             <section id="BodyTab3" className="BodyTab BodyTab3">
                 <ItemList />
+                <ItemList />
             </section>
         );
     }

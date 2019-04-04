@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 class ItemList extends Component {
     constructor(props) {
-        super(props);       
+        super(props);
 
         this._onSubmit = this._onSubmit.bind(this);
         this._removeItem = this._removeItem.bind(this);
@@ -14,22 +14,16 @@ class ItemList extends Component {
 
     _onSubmit(e) {
         e.preventDefault();
-        console.log("props items");
-        console.log(this.props.items);
         this.props.addItem({ text: e.target.children[0].children[0].value });
-        let temp = this.props.items;
-        //temp.push({ text: e.target.children[0].children[0].value });
-        e.target.children[0].children[0].value = "";        
-        //this.props.addItem(temp);
+        e.target.children[0].children[0].value = "";
     }
     _removeItem(index) {
         return function () {
-            let temp = this.props.items;
-            temp.splice(index, 1);            
+            this.props.removeItem(index);
         }.bind(this);
     }
     _removeAllItem() {
-        this.setState({ items: [] });
+        this.props.removeAllItem();
     }
 
     _generateList() {
@@ -52,8 +46,8 @@ class ItemList extends Component {
     }
 
     render() {
-        console.log("props items");
-        console.log(this.props.items);
+        //console.log("props items");
+        //console.log(this.props.items);
         const items = this._generateList();
         let removeAll = null;
         if (this.props.items.length > 1) {
@@ -85,21 +79,19 @@ class ItemList extends Component {
 
 function mapStateToProps(state) {
     return ({
-       items: state.items
+       items: state.ItemList.items
     });
-}
-
-
-function addItem(){
-    console.log("działa akcja");
 }
 function mapDispatchToProps(dispatch) {
     return ({
-        addItem: function(itemsProp){            
-            dispatch({type: "ADD", item: itemsProp})
+        addItem: function(itemToAdd){            
+            dispatch({type: "ADD", item: itemToAdd})
         },
-        removeItem: function(){
-            dispatch({type: "REMOVE"});
+        removeItem: function(itemIndexToRemove){
+            dispatch({type: "REMOVE", index: itemIndexToRemove});
+        },
+        removeAllItem: function(){
+            dispatch({type: "REMOVE_ALL"});
         }        
     });
 }
